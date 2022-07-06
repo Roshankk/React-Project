@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    transition: 0.5s;
+    transition-timing-function: ease-in;
+    background-image: linear-gradient(to right bottom, rgb(11, 213, 227), #7e16aee4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    width: 600px;
+    background-color: rgba(56, 191, 88, 0.534);
+    margin: 10px;
+
+}
+
+.fa-quote-left,
+.fa-quote-right {
+    font-size: 35px;
+    color: rgba(38, 77, 219, 0.9);
+}
+
+.quote {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.author {
+
+    margin-left: 380px;
+    text-align: right;
+    font-size: 25px;
+    font-style: italic;
+    font-family: cursive;
+}
+
+hr {
+    margin: 10px 0;
+    width: 100%;
+    border: 1px solid black;
+    background-color: black;
+}
+
+#Greeting{
+    margin: 10px;
+    color: rgb(213, 16, 16);
+   
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 9px;
+    margin-left: 400px;
+}
+
+.next {
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 5px;
+    font-weight: bold;
+    color: white;
+    background-image: linear-gradient(to right bottom, rgb(12, 0, 54), #00f05ca8);
+}
+
+.container:hover {
+    box-shadow: 0 10px 10px rgb(66, 10, 189);
+}

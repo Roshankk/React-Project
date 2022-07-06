@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>digtal Clock</title>
+    <style>
+        body {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 3px solid green; */
+    margin-top: 300px;
+    border-radius: 4px;
+    width: 400px;
+    height: 190px;
+    margin-left: 600px;
+ background-color: rgb(98, 98, 92);
+
+}
+
+#clockContainer {
+    color: aquamarine;
+    font-size: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 4px;
+}
+
+.container
+{
+    border: 2px solid white;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    width: 600px;
+    background-color: rgb(0, 0, 0);
+    margin: 10px;
+ 
+}
+
+.mainContainer {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: aqua;
+    width: 500px;
+    padding: 40px;
+}
+
+button{
+     background-color: rgb(138, 221, 28);
+     border-radius: 5px;
+}
+
+button:hover {
+    background-color: rgb(21, 228, 183);
+    color: rgb(3, 3, 3);
+    transition-duration: 0.2s;
+    
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    
+        <div class="mainContainer">
+            <div id="dateContainer"></div>
+            <div id="clockContainer"></div>
+            <div class="btn">
+                <button onclick="startClock()">Start</button>
+                <button class="" onclick="stopClock()">Stop</button>
+            </div>
+
+        </div>
+    </div>   
+   
+    <script>// plzz click on start button to show time//
+        (function showDate() {
+            var todayDate = new Date()
+            document.getElementById("dateContainer").innerText = todayDate.toDateString();
+        })();
+
+
+        function showTime() {
+            var todayDate = new Date()
+            var hours = todayDate.getHours()
+            var minutes = todayDate.getMinutes()
+            var seconds = todayDate.getSeconds()
+            var session = 'AM'
+
+            if (hours == 0) {
+                hours = 12
+            }
+            else if (hours > 12) {
+                session = 'PM'
+                hours = hours - 12
+            }
+            hours = hours < 10 ? 0 + "" + hours : hours
+            minutes = minutes < 10 ? 0 + "" + minutes : minutes
+            seconds = seconds < 10 ? 0 + "" + seconds : seconds
+
+            var clockTime = hours + ":" + minutes + ":" + seconds + " " + session
+            document.getElementById("clockContainer").innerText = clockTime;
+        }
+
+
+        var time;
+
+        function startClock() {
+            time = setInterval(showTime, 1000);
+        }
+
+        function stopClock() {
+            clearInterval(time)
+        }
+
+    </script>
+</body>
+
+</html>
